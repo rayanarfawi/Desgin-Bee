@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Design BEE</title>
+    <link rel="stylesheet" href="../../libs/css/bulma.min.css" />
+    <link rel="stylesheet" href="../../libs/css/Font-Awesome.css" />
+    <style>
+      body {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="message is-success is-size-5">
+      <div class="message-body">
+        <strong>Success ,</strong> you may now start using the device.
+        <div
+          class="columns is-mobile is-centered"
+          style="display: flex;justify-content: space-around;padding-top: 40px;"
+        >
+          <a href="start_page.html" class="button is-link">
+            <span class="icon is-small">
+              <i class="fas fa-redo"></i>
+            </span>
+            <span>Restart Application</span>
+          </a>
+          <a href="#" class="button is-danger" id="close-btn">
+            <span class="icon is-small">
+              <i class="fas fa-times"></i>
+            </span>
+            <span>Close</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <script>
+      const remote = require("electron").remote;
+
+      document
+        .getElementById("close-btn")
+        .addEventListener("click", function(e) {
+          let window = remote.getCurrentWindow();
+          window.close();
+        });
+    </script>
+  </body>
+</html>

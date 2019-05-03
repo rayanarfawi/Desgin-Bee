@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Design BEE</title>
+    <link rel="stylesheet" href="../../libs/css/bulma.min.css" />
+    <link rel="stylesheet" href="../../libs/css/Font-Awesome.css" />
+    <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      body {
+        overflow: hidden;
+        padding: 10px;
+      }
+
+      img {
+        width: 32px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="columns is-mobile">
+      <div
+        class="column is-1"
+        style="display: flex;align-items:center"
+        id="serial_check"
+      >
+        <img src="../../img/loading-gear.gif" alt="Loading" />
+      </div>
+      <div class="column is-size-5" style="display: flex;align-items:center">
+        <h6>Checking the arduino <strong> Serial Port</strong></h6>
+      </div>
+    </div>
+    <script src="../js/init_core.js"></script>
+  </body>
+</html>

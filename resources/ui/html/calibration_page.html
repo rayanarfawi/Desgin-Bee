@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Design BEE</title>
+    <link rel="stylesheet" href="../../libs/css/bulma.min.css" />
+    <link rel="stylesheet" href="../../libs/css/Font-Awesome.css" />
+    <link rel="stylesheet" href="../../libs/css/bulma-accordion.min.css" />
+    <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      body {
+        overflow: hidden;
+        padding: 20px;
+      }
+      #sensor-reading {
+        background: #ccc;
+        width: 90%;
+        height: 65%;
+      }
+      .accordion-content p {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="message is-success">
+      <div class="message-body">
+        <h6>Arduino Board on port <strong>com7</strong></h6>
+      </div>
+    </article>
+
+    <div class="columns is-mobile">
+      <div class="column is-7">
+        <article class="message is-info">
+          <div class="message-body is-size-7">
+            <p>1- Place your pH template as shown <a>here</a></p>
+            <p>2- Wait until it passes multiple readings</p>
+            <p>3- Assign a pH number</p>
+          </div>
+        </article>
+
+        <p style="display: flex;align-items:center">
+          <strong>pH: </strong>&nbsp;<input
+            type="number"
+            name="ph"
+            min="1"
+            max="14"
+            value="1"
+            style="text-align:center"
+            id="phInput"
+          />&nbsp;&nbsp;&nbsp;&nbsp;<a class="button is-info" id="assign-btn">
+            Assign
+          </a>
+        </p>
+      </div>
+      <div
+        class="column "
+        style="padding:0;display: flex;flex-direction: column;align-items: center;"
+      >
+        <div id="sensor-reading"></div>
+        <strong>Sensor Reading</strong>
+      </div>
+      <div class="column is-2" id="sensor-reading-text">
+        <p><strong style="color:red">R</strong> : 0</p>
+        <p><strong style="color:green">G</strong> : 0</p>
+        <p><strong style="color:blue">B</strong> : 0</p>
+        <p><strong style="color:red">WAIT</strong></p>
+      </div>
+    </div>
+
+    <section class="accordions">
+      <article class="accordion is-info is-size-7">
+        <div class="accordion-header toggle is-size-6">
+          <p>
+            Advanced Settings <span class="is-size-7">(Click to expand)</span>
+          </p>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <p
+              style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      "
+            >
+              Current pH tone (Frequency&nbsp;
+              <input
+                class="input is-small"
+                type="text"
+                style="width:10%"
+                value="1000"
+                id="freqInput"
+              />
+              hz , Delay&nbsp;
+              <input
+                class="input is-small"
+                type="text"
+                style="width:10%"
+                value="150"
+                id="delayInput"
+              />
+              ms , Repeat&nbsp;
+              <input
+                type="number"
+                name="repeat"
+                min="1"
+                max="30"
+                value="1"
+                style="text-align:center"
+                id="repeatInput"
+              />&nbsp;) &nbsp;&nbsp;
+              <a class="button is-link is-small" id="current_tone">
+                <span class="icon is-small">
+                  <i class="fas fa-play"></i>
+                </span>
+              </a>
+            </p>
+            <p
+              style="
+          display: flex;
+          align-items: center;
+      "
+            >
+              <label class="checkbox">
+                <input type="checkbox" checked id="start_tone_check" />
+                Start Tone
+                <span class="is-size-7"
+                  >(This will set a tone when device start)</span
+                >
+              </label>
+              &nbsp;&nbsp;
+              <a class="button is-link is-small" id="start_tone">
+                <span class="icon is-small">
+                  <i class="fas fa-play"></i>
+                </span>
+              </a>
+            </p>
+            <p>
+              <label class="checkbox">
+                <input type="checkbox" id="serial_check" />
+                Serial Output
+              </label>
+            </p>
+            <p>
+              Multiple Readings&nbsp;
+              <input
+                type="number"
+                name="Multiple repeat"
+                min="1"
+                max="20"
+                value="8"
+                style="text-align:center"
+                id="multipleReadingInput"
+              />
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+    <div class="column is-mobile has-text-centered">
+      <a class="button is-success" id="generate_btn">
+        <span class="icon is-medium">
+          <i class="fas fa-cogs"></i>
+        </span>
+        <span>Generate and upload</span>
+      </a>
+    </div>
+
+    <script src="../../libs/js/bulma-accordion.min.js"></script>
+    <script src="../js/calibration_core.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Design BEE</title>
+    <link rel="stylesheet" href="../../libs/css/bulma.min.css" />
+    <link rel="stylesheet" href="../../libs/css/Font-Awesome.css" />
+
+    <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      body {
+        overflow: hidden;
+        padding: 5px;
+      }
+      #bee_icon {
+        max-width: 60%;
+        height: auto;
+        margin-left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="columns is-mobile">
+      <div class="column is-4">
+        <img src="../../img/icon.png" alt="Bee Icon" id="bee_icon" />
+      </div>
+      <div class="column is-8" style="display: flex;align-items:center">
+        <h2 class="has-text-weight-bold has-text-grey-darker is-size-4">
+          Design Bee Calibrator Tool
+        </h2>
+      </div>
+    </div>
+
+    <article class="message is-info">
+      <div class="message-body is-size-7">
+        <div class="columns is-mobile">
+          <p class="is-size-4" style="padding:0px 25px">
+            This tool will automate the proccess of calibration of your Design
+            Bee prototype.
+          </p>
+        </div>
+        <div class="columns is-mobile">
+          <p style="padding:0px 25px">
+            For the detailed guide <a href="">Click here</a>
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <div class="columns is-mobile">
+      <div class="column is-6">
+        <img src="../../img/connect-arduino.png" alt="Plug in Arduino" />
+      </div>
+      <div class="column has-text-centered">
+        <h3 class="is-size-5 has-text-left">
+          Please <strong>Plug in</strong> your Arduino to the pc.
+        </h3>
+        <br /><br />
+        <a href="init_page.html" class="button is-success">
+          <span class="icon is-small">
+            <i class="fas fa-forward"></i>
+          </span>
+          <span>Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column">
+        <div class="notification is-warning">
+          Be aware that pressing <strong>Next Button</strong> above, a new code
+          will be uploaded to the Arduino.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

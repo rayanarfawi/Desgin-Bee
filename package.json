@@ -1,0 +1,48 @@
+{
+  "name": "desing-bee-calibrator",
+  "version": "0.0.1",
+  "description": "A tool to calibrate the Design Bee prototype (as mentioned on the Paper)",
+  "main": "guiCore.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "Design",
+    "Bee",
+    "Bee",
+    "calibrator",
+    "Calibrator",
+    "tool"
+  ],
+  "author": "Rayan Arfaoui",
+  "license": "MIT",
+  "build": {
+    "buildDependenciesFromSource": true,
+    "productName": "Design Bee Calibrator",
+    "appId": "arfadent.beecalibrator.0.0.1",
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "Design Bee Calibrator.exe"
+    },
+    "extraFiles": [
+      "resources/drivers",
+      "resources/cli"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^5.0.0",
+    "electron-builder": "^20.39.0",
+    "electron-rebuild": "^1.8.4"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.1.0",
+    "serialport": "^7.1.5"
+  }
+}
