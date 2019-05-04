@@ -1,6 +1,6 @@
 {
   "name": "desing-bee-calibrator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tool to calibrate the Design Bee prototype (as mentioned on the Paper)",
   "main": "guiCore.js",
   "scripts": {

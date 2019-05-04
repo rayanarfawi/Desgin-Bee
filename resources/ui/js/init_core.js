@@ -17,8 +17,6 @@ const cli =
   (isDev ? remoteApp.getAppPath() + "\\resources" : process.resourcesPath) +
   "\\cli\\arduino-cli.exe ";
 
-console.log(cli);
-
 window.onload = () => {
   let serial_check = document.querySelector("#serial_check");
   update_index().then(

@@ -14,7 +14,7 @@ const { exec } = require("child_process");
 const isDev = require("electron-is-dev");
 
 const cli =
-  (isDev ? remoteApp.getAppPath() + "\\resources" : process.resourcesPath) +
+  (isDev ? remote.app.getAppPath() + "\\resources" : process.resourcesPath) +
   "\\cli\\arduino-cli.exe ";
 
 let r, g, b;
@@ -131,7 +131,13 @@ window.onload = () => {
                 delayInputVal,
                 repeatInputVal
               ];
-              if (phInput.value < 14) phInput.value++;
+              if (phInput.value < 14) {
+                phInput.value++;
+                // Dumb fix , but hey get the job done (Not Urgent fix)
+                phInputVal = phInput.value;
+                freqInput.value = 1000 + (phInputVal - 1) * 200;
+                freqInputVal = 1000 + (phInputVal - 1) * 200;
+              }
             }
           }
         );
@@ -140,7 +146,13 @@ window.onload = () => {
     if (override) {
       calibrated_pH[phInput.value - 1] = [r, g, b];
       tones[phInput.value - 1] = [freqInputVal, delayInputVal, repeatInputVal];
-      if (phInput.value < 14) phInput.value++;
+      if (phInput.value < 14) {
+        phInput.value++;
+        // Dumb fix , but hey get the job done (Not Urgent fix)
+        phInputVal = phInput.value;
+        freqInput.value = 1000 + (phInputVal - 1) * 200;
+        freqInputVal = 1000 + (phInputVal - 1) * 200;
+      }
     }
   });
   document.querySelector("#current_tone").addEventListener("click", evt => {
