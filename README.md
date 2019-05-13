@@ -1,4 +1,4 @@
-# Desgin-Bee
+# Design-Bee
 
 A tool to calibrate the Design Bee prototype.
 
